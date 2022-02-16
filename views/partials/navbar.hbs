@@ -1,0 +1,26 @@
+<nav class="blue darken-4">
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Todos</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger" style="font-size: 2rem">☰</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+            {{#if isIndex}}
+                <li class="active"><a href="/">Todos</a></li>
+            {{else}}
+                <li><a href="/">Todos</a></li>
+            {{/if}}
+
+            {{#if isCreate}}
+                <li class="active"><a href="/create">Create</a></li>
+            {{else}}
+                <li><a href="/create">Create</a></li>
+            {{/if}}
+
+        </ul>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="/">Todos</a></li>
+            <li><a href="/create">Create</a></li>
+        </ul>
+    </div>
+</nav>
