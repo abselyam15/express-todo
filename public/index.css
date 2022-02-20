@@ -1,3 +1,8 @@
+a {
+    text-decoration: none;
+    color: #9e9e9e;
+}
+
 .todo {
     margin-bottom: 1rem;
 }
@@ -18,4 +23,12 @@
 
 .todo i {
     z-index: 2;
+}
+
+@media screen and (max-width: 425px) {
+    .btn-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }

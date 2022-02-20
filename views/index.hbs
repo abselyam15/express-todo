@@ -1,21 +1,34 @@
 <h2>Todos Page</h2>
+<div class="btn-mobile">
+    <a href="/completed" class="btn btn-small green">Completed</a>
+    <a href="/uncompleted" class="btn btn-small red darken-4">Uncompleted</a>
+    <a href="/" class="btn btn-small grey">Clear</a>
+</div>
+
     {{#if todos.length}}
-        <ul>
+        <ul id="todos">
             {{#each todos}}
                 <li class="todo">
-                    <form action="/complete", method="POST">
+                    <form action="/complete" method="POST">
                         <label>
                             {{#if completed}}
-                                <input type="checkbox" checked name="completed">
-                                <span class="completed">{{title}}</span>
+                                <a href="/complete/{{_id}}">
+                                    <input type="checkbox" checked name="completed">
+                                    <span class="completed">{{title}}</span>
+                                </a>
                             {{else}}
-                                <input type="checkbox" name="completed">
-                                <span>{{title}}</span>
+                                <a href="/complete/{{_id}}">
+                                    <input type="checkbox" name="completed">
+                                    <span>{{title}}</span>
+                                </a>
                             {{/if}}
 
                             <input type="hidden" value="{{_id}}" name="id">
 
-                            <button class="btn btn-small" type="submit">Save</button>
+                            <div class="right">
+                                <a href="/edit/{{_id}}" class="btn btn-floating btn-small orange darken-4"><i class="material-icons">edit</i></a>
+                                <a href="/delete/{{_id}}" class="btn btn-floating btn-small red darken-4" ><i class="material-icons">delete</i></a>
+                            </div>
                         </label>
                     </form>
                 </li>
